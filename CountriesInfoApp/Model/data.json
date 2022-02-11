@@ -1,9 +1,16 @@
 [{
+"countryName" :  "Philippinen",
+"inhabitants" : "111.994.623",
+"capital" : "Manila",
+"currency" : "Philippine Pesos",
+"imageName" : "philippines"
+},
+{
 "countryName" :  "Deutschland",
 "inhabitants" : "82.792.351",
 "capital" : "Berlin",
 "currency" : "Euro",
-"imageName" : "greece"
+"imageName" : "germany"
 },
 {
 "countryName" :  "Frankreich",
