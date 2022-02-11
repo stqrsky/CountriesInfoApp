@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     var countries = countryData
+    var selectedCountry: CountryModel?
     //MARK: - Outlet
     
     @IBOutlet weak var tableView: UITableView!
@@ -26,11 +27,23 @@ class ViewController: UIViewController {
         tableView.rowHeight  = 100
     }
 
+    // loading right country, when Segue is performed
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            let zielTVC = segue.destination as! CountryDetailTableVC
+            zielTVC.country = selectedCountry
+        }
+    }
 
 }
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        selectedCountry = countries[indexPath.row]
+        // Flag tapped, to perform the Segue connection to show country detail
+        performSegue(withIdentifier: "showDetail", sender: nil)
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

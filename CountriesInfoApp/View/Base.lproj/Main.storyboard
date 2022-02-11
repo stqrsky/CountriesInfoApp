@@ -79,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="886.95652173913049" y="63.616071428571423"/>
         </scene>
-        <!--Country Detail TableVC Table View Controller-->
+        <!--Country Detail TableVC-->
         <scene sceneID="avO-zd-ug8">
             <objects>
-                <tableViewController id="ex6-P3-YId" customClass="CountryDetailTableVCTableViewController" customModule="CountriesInfoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="ex6-P3-YId" customClass="CountryDetailTableVC" customModule="CountriesInfoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="trp-Wx-Pp6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,7 +119,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="145"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pze-EY-rOY">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="Pze-EY-rOY">
                                                     <rect key="frame" x="142" y="7.5" width="130" height="130"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="130" id="muz-4K-tF4"/>
@@ -184,6 +184,9 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="oGh-ik-0vV" secondAttribute="bottom" id="aAh-55-b3G"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="oGh-ik-0vV" firstAttribute="centerX" secondItem="oWS-a8-0Y9" secondAttribute="centerX" id="NRd-L3-VUv"/>
+                                        </constraints>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -219,6 +222,13 @@
                             <outlet property="delegate" destination="ex6-P3-YId" id="niV-Ez-Fjj"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="countryCapital" destination="oGh-ik-0vV" id="WtK-mD-HOY"/>
+                        <outlet property="countryCurrency" destination="i90-LJ-lz9" id="zvM-Me-cVh"/>
+                        <outlet property="countryFlagImage" destination="Pze-EY-rOY" id="OwF-lb-zja"/>
+                        <outlet property="countryInhabitants" destination="cLI-4H-SJs" id="ZHC-VH-ObY"/>
+                        <outlet property="countryNameLabel" destination="fGJ-O1-sre" id="pFw-kS-Ugh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xPC-cW-k02" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -244,6 +254,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="DefaultImage" width="132" height="170"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
