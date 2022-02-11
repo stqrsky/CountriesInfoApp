@@ -13,6 +13,7 @@
 		F836F74527B6794B0071E7CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F836F74327B6794B0071E7CE /* Main.storyboard */; };
 		F836F74727B6794E0071E7CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F836F74627B6794E0071E7CE /* Assets.xcassets */; };
 		F836F74A27B6794E0071E7CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F836F74827B6794E0071E7CE /* LaunchScreen.storyboard */; };
+		F836F75227B67BE90071E7CE /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F836F75127B67BE90071E7CE /* CountryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F836F74627B6794E0071E7CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F836F74927B6794E0071E7CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F836F74B27B6794E0071E7CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F836F75127B67BE90071E7CE /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				F836F73D27B6794B0071E7CE /* AppDelegate.swift */,
 				F836F73F27B6794B0071E7CE /* SceneDelegate.swift */,
 				F836F74127B6794B0071E7CE /* ViewController.swift */,
+				F836F75127B67BE90071E7CE /* CountryTableViewCell.swift */,
 				F836F74327B6794B0071E7CE /* Main.storyboard */,
 				F836F74627B6794E0071E7CE /* Assets.xcassets */,
 				F836F74827B6794E0071E7CE /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F836F75227B67BE90071E7CE /* CountryTableViewCell.swift in Sources */,
 				F836F74227B6794B0071E7CE /* ViewController.swift in Sources */,
 				F836F73E27B6794B0071E7CE /* AppDelegate.swift in Sources */,
 				F836F74027B6794B0071E7CE /* SceneDelegate.swift in Sources */,
