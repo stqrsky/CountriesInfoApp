@@ -74,7 +74,7 @@ extension ViewController: UISearchBarDelegate {
         let searchText = searchText.lowercased()
         
         filteredCountries = countries.filter({ country in
-            if country.countryName.lowercased.contains(searchText) {
+            if country.countryName.lowercased().contains(searchText) {
                 return true
             }
             return false
