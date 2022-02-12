@@ -8,8 +8,8 @@
 import Foundation
 
 extension Bundle {
-    func decodeCountryModelObjects() -> [CountryModel] {
-        guard let url = self.url(forResource: "data", withExtension: "json") else {
+    func decode<T: Decodable>(fileName: String) -> T {
+        guard let url = self.url(forResource: fileName, withExtension: nil) else {
             fatalError("File could not be found in Bundle.")
         }
         
@@ -17,10 +17,10 @@ extension Bundle {
             fatalError("File could not be loaded.")
         }
         
-        guard let countryModelObjects = try? JSONDecoder().decode([CountryModel].self, from: data) else {
+        guard let objects = try? JSONDecoder().decode(T.self, from: data) else {
             fatalError("Decoding failure.")
         }
         
-        return countryModelObjects
+        return objects
     }
 }

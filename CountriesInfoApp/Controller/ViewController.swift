@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     lazy var filteredCountries = countries
-    let countries = Bundle.main.decodeCountryModelObjects()
+    let countries: [CountryModel] = Bundle.main.decode(fileName: "data.json")
     var selectedCountry: CountryModel?
     
     //MARK: - Outlet
