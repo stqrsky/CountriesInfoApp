@@ -9,8 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var filteredCountries = countryData
-    let countries = countryData
+    lazy var filteredCountries = countries
+    let countries = Bundle.main.decodeCountryModelObjects()
     var selectedCountry: CountryModel?
     
     //MARK: - Outlet
