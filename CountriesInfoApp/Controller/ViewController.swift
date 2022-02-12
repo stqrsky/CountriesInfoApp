@@ -71,8 +71,10 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
+        let searchText = searchText.lowercased()
+        
         filteredCountries = countries.filter({ country in
-            if country.countryName.contains(searchText) {
+            if country.countryName.lowercased.contains(searchText) {
                 return true
             }
             return false
