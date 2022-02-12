@@ -9,7 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var countries = countryData
+    var filteredCountries = countryData
+    let countries = countryData
     var selectedCountry: CountryModel?
     
     //MARK: - Outlet
@@ -69,6 +70,14 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        <#code#>
+        
+        filteredCountries = countries.filter({ country in
+            if country.countryName.contains(searchText) {
+                return true
+            }
+            return false
+        })
+        
+        
     }
 }
