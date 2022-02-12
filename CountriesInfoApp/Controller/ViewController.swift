@@ -11,10 +11,11 @@ class ViewController: UIViewController {
     
     var countries = countryData
     var selectedCountry: CountryModel?
+    
     //MARK: - Outlet
     
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var searchBar: UISearchBar!
     
     
     // let data = ["Deutschland", "Philippinen", "Frankreich", "Dänemark"]
@@ -23,6 +24,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        searchBar.delegate = self
+        tableView.keyboardDismissMode = .onDrag
         
         tableView.rowHeight  = 100
     }
@@ -62,5 +65,10 @@ extension ViewController: UITableViewDataSource {
         return cell
     }
     
-    
+}
+
+extension ViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        <#code#>
+    }
 }
