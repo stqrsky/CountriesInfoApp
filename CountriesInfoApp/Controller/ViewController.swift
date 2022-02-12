@@ -44,7 +44,7 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        selectedCountry = countries[indexPath.row]
+        selectedCountry = filteredCountries[indexPath.row]
         // Flag tapped, to perform the Segue connection to show country detail
         performSegue(withIdentifier: "showDetail", sender: nil)
         
@@ -54,14 +54,14 @@ extension ViewController: UITableViewDelegate {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return countries.count
+        return filteredCountries.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CountryTableViewCell
         
-        cell.countryNameLabel.text = countries[indexPath.row].countryName
-        cell.countryFlagImage.image = UIImage(named: countries[indexPath.row].imageName)
+        cell.countryNameLabel.text = filteredCountries[indexPath.row].countryName
+        cell.countryFlagImage.image = UIImage(named: filteredCountries[indexPath.row].imageName)
         
         return cell
     }
@@ -73,13 +73,18 @@ extension ViewController: UISearchBarDelegate {
         
         let searchText = searchText.lowercased()
         
-        filteredCountries = countries.filter({ country in
-            if country.countryName.lowercased().contains(searchText) {
-                return true
-            }
-            return false
-        })
-        
+        if searchText != "" {
+            filteredCountries = countries.filter({ country in
+                if country.countryName.lowercased().contains(searchText) {
+                    return true
+                }
+                return false
+            })
+            
+        } else {
+            filteredCountries = countries
+        }
+        self.tableView.reloadData()
         
     }
 }
