@@ -21,9 +21,6 @@ class CountryDetailTableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
         countryNameLabel.text = country?.countryName
         countryFlagImage.image = UIImage(named: country?.imageName ?? "DefaultImage")
         countryFlagImage.layer.borderWidth = 1
@@ -32,5 +29,6 @@ class CountryDetailTableVC: UITableViewController {
         countryCapital.text = country?.capital
         countryCurrency.text = country?.currency
     }
+
     
 }
